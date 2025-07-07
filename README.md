@@ -34,6 +34,7 @@ We compute similarities between each pair of product descriptions using two tech
 - Cosine similarity highlights semantic closeness even if exact words differ.
 - Jaccard is stricter, and better at exact duplicates
 - TF-IDF + Cosine is more effective for identifying related product styles
+- 
 
 - N-grams:
 
@@ -41,5 +42,42 @@ We compute similarities between each pair of product descriptions using two tech
 📌 Notes
 - Simple but effective for prototyping next-word suggestion
 - Can be extended into auto-complete or chatbot models
+
+
+- Documents classification:
+
+ 🔍 Part 1: Unsupervised Learning (Clustering)
+
+⚙️ Steps:
+- TF-IDF vectorization
+- PCA for dimensionality reduction
+- Clustering methods:
+  - K-Means
+  - Hierarchical Clustering
+  - DBSCAN
+
+### 📊 Visualization:
+- Messages plotted using the 2 main PCA components
+- First colored by cluster (KMeans)
+- Second colored by true label (spam/ham)
+
+ 🤖 Part 2: Supervised Learning (Classification)
+ 
+🧠 Models Used:
+| Model              | Status              | Notes |
+|-------------------|---------------------|-------|
+| Naive Bayes        | ❌ Failed           | MultinomialNB doesn't support negative values (Word2Vec vectors) |
+| Random Forest      | ✅ Worked well       | Good accuracy, solid ham detection |
+| Gradient Boosting  | ✅ Decent results    | Lower recall for spam |
+| XGBoost            | ✅ Best performer    | High precision and balanced metrics |
+
+ ✅ XGBoost (Best):
+
+Accuracy: 0.960  
+- ham: F1-score 0.98  
+- spam: F1-score 0.83
+
+
+
 
 
