@@ -2,6 +2,8 @@
 # NLP
 
 - Similarities between texts:
+
+
  📐 1. Similarity Computation
 
 We compute similarities between each pair of product descriptions using two techniques:
@@ -34,6 +36,8 @@ We compute similarities between each pair of product descriptions using two tech
 - TF-IDF + Cosine is more effective for identifying related product styles
 
 - N-grams:
+
+  
 📌 Notes
 - Simple but effective for prototyping next-word suggestion
 - Can be extended into auto-complete or chatbot models
